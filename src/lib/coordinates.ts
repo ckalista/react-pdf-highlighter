@@ -34,7 +34,7 @@ const pdfToViewport = (pdf: Scaled, viewport: Viewport): LTWHP => {
 
   const result = {
     left: x1 * viewport.width * 10,
-    top:  (y1) * viewport.height * 10,
+    top:  (viewport.height - y1) * viewport.height * 10,
 
     width: (x2 - x1) * viewport.width * 10,
     height: (y2 - y1) * viewport.height * 10,
