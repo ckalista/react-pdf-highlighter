@@ -30,22 +30,19 @@ export const viewportToScaled = (
 };
 
 const pdfToViewport = (pdf: Scaled, viewport: Viewport): LTWHP => {
-  const [x1, y1, x2, y2] = viewport.convertToViewportRectangle([
-    pdf.x1,
-    pdf.y1,
-    pdf.x2,
-    pdf.y2,
-  ]);
+  const [x1, y1, x2, y2] = [pdf.x1, pdf.y1, pdf.x2, pdf.y2];
 
-  return {
-    left: x1,
-    top: y1,
+  const result = {
+    left: x1 * viewport.width * 10,
+    top:  (y1) * viewport.height * 10,
 
-    width: x2 - x1,
-    height: y1 - y2,
+    width: (x2 - x1) * viewport.width * 10,
+    height: (y2 - y1) * viewport.height * 10,
 
     pageNumber: pdf.pageNumber,
-  };
+  }
+
+  return result;
 };
 
 export const scaledToViewport = (
