@@ -53,7 +53,11 @@ export interface HighlightComment {
   comment: Comment;
 }
 
-export interface NewHighlight extends HighlightContent, HighlightComment {
+export interface HighlightType {
+  'type': string;
+}
+
+export interface NewHighlight extends HighlightContent, HighlightComment, HighlightType {
   position: ScaledPosition;
 }
 

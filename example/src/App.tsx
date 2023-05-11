@@ -75,7 +75,7 @@ class App extends Component<{}, State> {
     });
   };
 
-  scrollViewerTo = (highlight: any) => {};
+  scrollViewerTo = (highlight: any) => { };
 
   scrollToHighlightFromHash = () => {
     const highlight = this.getHighlightById(parseIdFromHash());
@@ -122,11 +122,11 @@ class App extends Component<{}, State> {
         } = h;
         return id === highlightId
           ? {
-              id,
-              position: { ...originalPosition, ...position },
-              content: { ...originalContent, ...content },
-              ...rest,
-            }
+            id,
+            position: { ...originalPosition, ...position },
+            content: { ...originalContent, ...content },
+            ...rest,
+          }
           : h;
       }),
     });
@@ -170,7 +170,7 @@ class App extends Component<{}, State> {
                   <Tip
                     onOpen={transformSelection}
                     onConfirm={(comment) => {
-                      this.addHighlight({ content, position, comment });
+                      this.addHighlight({ content, position, comment, type: "" });
 
                       hideTipAndSelection();
                     }}
@@ -193,6 +193,7 @@ class App extends Component<{}, State> {
                     <Highlight
                       isScrolledTo={isScrolledTo}
                       position={highlight.position}
+                      type={highlight.type}
                       comment={highlight.comment}
                     />
                   ) : (

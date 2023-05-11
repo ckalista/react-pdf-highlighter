@@ -9,6 +9,7 @@ interface Props {
     boundingRect: LTWHP;
     rects: Array<LTWHP>;
   };
+  'type': string;
   onClick?: () => void;
   onMouseOver?: () => void;
   onMouseOut?: () => void;
@@ -23,6 +24,7 @@ export class Highlight extends Component<Props> {
   render() {
     const {
       position,
+      type,
       onClick,
       onMouseOver,
       onMouseOut,
@@ -55,7 +57,7 @@ export class Highlight extends Component<Props> {
               onClick={onClick}
               key={index}
               style={rect}
-              className={`Highlight__part`}
+              className={`Highlight__part ${type ? "Highlight__part__type--" + type : ""}`}
             />
           ))}
         </div>

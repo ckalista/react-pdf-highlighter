@@ -60,6 +60,7 @@ export const testHighlights = {
         text: "impressive",
         emoji: "",
       },
+      type: "test-type",
       id: "812807243318874",
     },
     {
