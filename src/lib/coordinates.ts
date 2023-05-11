@@ -31,7 +31,6 @@ export const viewportToScaled = (
 
 const pdfToViewport = (pdf: Scaled, viewport: Viewport): LTWHP => {
   const [x1, y1, x2, y2] = [pdf.x1, pdf.y1, pdf.x2, pdf.y2];
-  console.log('Called pdfToViewport with: [x1, y1, x2, y2]: ', [x1, y1, x2, y2]);
   
   const result = {
     left: x1 * viewport.width,
