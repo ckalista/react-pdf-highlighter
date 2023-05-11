@@ -34,11 +34,11 @@ const pdfToViewport = (pdf: Scaled, viewport: Viewport): LTWHP => {
   console.log('Called pdfToViewport with: [x1, y1, x2, y2]: ', [x1, y1, x2, y2]);
   
   const result = {
-    left: x1 * viewport.width * 10,
-    top:  viewport.height - (y1 * viewport.height * 10),
+    left: x1 * viewport.width,
+    top:  y1 * viewport.height,
 
-    width: (x2 - x1) * viewport.width * 10,
-    height: (y2 - y1) * viewport.height * 10,
+    width: (x2 - x1) * viewport.width,
+    height: (y2 - y1) * viewport.height,
 
     pageNumber: pdf.pageNumber,
   }
