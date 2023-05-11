@@ -29,6 +29,7 @@ export const testHighlights = {
         text: "Flow or TypeScript?",
         emoji: "🔥",
       },
+      type: "default",
       id: "8245652131754351",
     },
     {
@@ -60,7 +61,7 @@ export const testHighlights = {
         text: "impressive",
         emoji: "",
       },
-      type: "test-type",
+      type: "default",
       id: "812807243318874",
     },
     {
@@ -103,6 +104,7 @@ export const testHighlights = {
         text: "immersive coding experience!",
         emoji: "",
       },
+      type: "default",
       id: "2599712881412761",
     },
     {
@@ -127,6 +129,7 @@ export const testHighlights = {
         text: "lisp!",
         emoji: "😱",
       },
+      type: "default",
       id: "9120567402727258",
     },
     {
@@ -169,6 +172,7 @@ export const testHighlights = {
         text: "",
         emoji: "",
       },
+      type: "default",
       id: "32839601376722394",
     },
     {
@@ -193,10 +197,12 @@ export const testHighlights = {
         text: "",
         emoji: "",
       },
+      type: "default",
       id: "46570518065661615",
     },
     {
       id: "46570518065661616",
+      type: "default",
       comment: { text: "Fast type checking?!?!", emoji: "😱" },
       content: {
         text: "Fast type checking.The key toFlow’s speed is modularity: the ability to break the analysis intofile-sized chunks that can be assembled later. Fortunately, JavaScript is already written using files4Avik Chaudhuri, Panagiotis Vekris, Sam Goldman, Marshall Roch, and Gabriel Levias modules, so we modularize our analysis simply by asking that modules have explicitly typedsignatures. (We still infer types for the vast majority of code “local” to modules.) Coincidentally,developers consider this good software engineering practice anyway.",
@@ -312,6 +318,7 @@ export const testHighlights = {
         text: "Static Single Assignment",
         emoji: "😎",
       },
+      type: "default",
       id: "29668244118038056",
     },
   ],

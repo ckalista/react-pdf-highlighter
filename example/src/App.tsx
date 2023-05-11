@@ -170,7 +170,7 @@ class App extends Component<{}, State> {
                   <Tip
                     onOpen={transformSelection}
                     onConfirm={(comment) => {
-                      this.addHighlight({ content, position, comment, type: "" });
+                      this.addHighlight({ content, position, comment, type: "dafault" });
 
                       hideTipAndSelection();
                     }}
