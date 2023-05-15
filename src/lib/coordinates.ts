@@ -35,13 +35,13 @@ export const viewportToPdf = (
 ): Scaled => {
   return {
     x1: rect.left / viewport.width,
-    y1: rect.top / viewport.width,
+    y1: rect.top / viewport.height,
 
     x2: (rect.left + rect.width) / viewport.width,
-    y2: (rect.top + rect.height) / viewport.width,
+    y2: (rect.top + rect.height) / viewport.height,
 
     width: rect.width / viewport.width,
-    height: rect.height / viewport.width,
+    height: rect.height / viewport.height,
 
     pageNumber: rect.pageNumber,
   };
