@@ -25,7 +25,7 @@ import {
   getWindow,
   isHTMLElement,
 } from "../lib/pdfjs-dom";
-import { scaledToViewport, viewportToScaled } from "../lib/coordinates";
+import { scaledToViewport, viewportToScaled, viewportToPdf } from "../lib/coordinates";
 import MouseSelection from "./MouseSelection";
 import type { PDFDocumentProxy } from "pdfjs-dist";
 import TipContainer from "./TipContainer";
@@ -115,7 +115,7 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
   containerNode?: HTMLDivElement | null = null;
   containerNodeRef: RefObject<HTMLDivElement>;
   highlightReactRoots: { [page: number]: Root } = {};
-  unsubscribe = () => {};
+  unsubscribe = () => { };
 
   constructor(props: Props<T_HT>) {
     super(props);
@@ -294,7 +294,7 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
     const viewport = this.viewer.getPageView(pageNumber - 1).viewport;
 
     return {
-      boundingRect: viewportToScaled(boundingRect, viewport),
+      boundingRect: viewportToPdf(boundingRect, viewport),
       rects: (rects || []).map((rect) => viewportToScaled(rect, viewport)),
       pageNumber,
     };
@@ -386,7 +386,7 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
         ...pageViewport.convertToPdfPoint(
           0,
           scaledToViewport(boundingRect, pageViewport, usePdfCoordinates).top -
-            scrollMargin
+          scrollMargin
         ),
         0,
       ],

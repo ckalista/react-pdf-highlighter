@@ -29,6 +29,24 @@ export const viewportToScaled = (
   };
 };
 
+export const viewportToPdf = (
+  rect: LTWHP,
+  viewport: Viewport
+): Scaled => {
+  return {
+    x1: rect.left / viewport.width,
+    y1: rect.top / viewport.width,
+
+    x2: (rect.left + rect.width) / viewport.width,
+    y2: (rect.top + rect.height) / viewport.width,
+
+    width: rect.width / viewport.width,
+    height: rect.height / viewport.width,
+
+    pageNumber: rect.pageNumber,
+  };
+};
+
 const pdfToViewport = (pdf: Scaled, viewport: Viewport): LTWHP => {
   const [x1, y1, x2, y2] = [pdf.x1, pdf.y1, pdf.x2, pdf.y2];
   
