@@ -6,6 +6,7 @@ interface Props {
   onMouseOver: (content: JSX.Element) => void;
   popupContent: JSX.Element;
   onMouseOut: () => void;
+  onClick: () => void;
   children: JSX.Element;
 }
 
@@ -19,7 +20,7 @@ export class Popup extends Component<Props, State> {
   };
 
   render() {
-    const { onMouseOver, popupContent, onMouseOut } = this.props;
+    const { onMouseOver, popupContent, onMouseOut, onClick } = this.props;
 
     return (
       <div
@@ -43,6 +44,9 @@ export class Popup extends Component<Props, State> {
         }}
         onMouseOut={() => {
           this.setState({ mouseIn: false });
+        }}
+        onClick={() => {
+          onClick();
         }}
       >
         {this.props.children}
