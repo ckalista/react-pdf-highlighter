@@ -217,6 +217,7 @@ class App extends Component<{}, State> {
                         setTip(highlight, (highlight) => popupContent)
                       }
                       onMouseOut={hideTip}
+                      onClick={() => console.log("Clicked on highlight:", highlight)}
                       key={index}
                       children={component}
                     />
